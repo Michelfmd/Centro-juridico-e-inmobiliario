@@ -51,3 +51,4 @@ npm run preview
 
 La propuesta café fue descartada y ya no tiene una ruta activa.
 # nn
+# lic.
