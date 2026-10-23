@@ -1,0 +1,657 @@
+:root {
+	--color-background: #f7f7f5;
+	--color-surface: #ffffff;
+	--color-text: #1c2730;
+	--color-muted: #52616b;
+	--color-border: #d9dfe2;
+	--color-accent: #1f4b5c;
+	--color-accent-contrast: #ffffff;
+	--font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+	--space-1: 0.5rem;
+	--space-2: 1rem;
+	--space-3: 1.5rem;
+	--space-4: 2rem;
+	--space-5: 3rem;
+	--space-6: 5rem;
+	--content-width: 70rem;
+	--radius-small: 0.375rem;
+	--shadow-soft: 0 1.5rem 4rem rgb(28 39 48 / 8%);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: var(--color-background);
+	color: var(--color-text);
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+a {
+	color: inherit;
+}
+
+a:focus-visible {
+	outline: 3px solid var(--color-accent);
+	outline-offset: 3px;
+}
+
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: 1rem;
+	transform: translateY(-120%);
+	padding: var(--space-1) var(--space-2);
+	background: var(--color-accent);
+	color: var(--color-accent-contrast);
+	z-index: 10;
+}
+
+.skip-link:focus {
+	transform: translateY(0);
+}
+
+.container {
+	width: min(100% - 2rem, var(--content-width));
+	margin-inline: auto;
+}
+
+.site-header {
+	border-bottom: 1px solid var(--color-border);
+	background: var(--color-surface);
+}
+
+.site-header__inner,
+.site-nav ul {
+	display: flex;
+	align-items: center;
+}
+
+.site-header__inner {
+	justify-content: space-between;
+	gap: var(--space-2);
+	min-height: 4.5rem;
+}
+
+.site-name {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.site-nav ul {
+	gap: var(--space-2);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	flex-wrap: wrap;
+}
+
+.site-nav a {
+	display: inline-block;
+	padding: 0.5rem;
+	text-decoration: none;
+}
+
+.hero,
+.placeholder-section {
+	padding-block: var(--space-6);
+}
+
+.hero {
+	background: var(--color-surface);
+}
+
+.hero h1,
+.placeholder-section h2 {
+	max-width: 42rem;
+	margin-block: 0 var(--space-2);
+	line-height: 1.15;
+}
+
+.hero p,
+.placeholder-section p {
+	max-width: 42rem;
+	margin-block: 0;
+	color: var(--color-muted);
+}
+
+.eyebrow {
+	margin-block: 0 var(--space-1) !important;
+	color: var(--color-accent) !important;
+	font-size: 0.875rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.placeholder-section {
+	border-bottom: 1px solid var(--color-border);
+}
+
+.site-footer {
+	padding-block: var(--space-4);
+	color: var(--color-muted);
+	font-size: 0.9375rem;
+}
+
+.landing {
+	--landing-ink: #1c2730;
+	--landing-muted: #5f6c73;
+	--landing-surface: #ffffff;
+	--landing-soft: #f1f3f2;
+	--landing-line: #d8dede;
+	--landing-accent: #1f4b5c;
+	background: var(--landing-surface);
+	color: var(--landing-ink);
+}
+
+.landing--moderna {
+	--landing-ink: #13253b;
+	--landing-muted: #617084;
+	--landing-surface: #ffffff;
+	--landing-soft: #f3f6f8;
+	--landing-line: #d9e1e8;
+	--landing-accent: #a47b32;
+}
+
+.landing-header {
+	border-bottom: 1px solid var(--landing-line);
+	background: color-mix(in srgb, var(--landing-surface) 94%, transparent);
+}
+
+.landing-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-3);
+	min-height: 5rem;
+}
+
+.brand {
+	display: grid;
+	gap: 0.125rem;
+	color: var(--landing-ink);
+	text-decoration: none;
+}
+
+.brand__name {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.brand__role {
+	color: var(--landing-muted);
+	font-size: 0.72rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.landing-nav {
+	display: flex;
+	gap: 0.25rem;
+}
+
+.landing-nav a {
+	padding: 0.5rem 0.35rem;
+	color: var(--landing-muted);
+	font-size: 0.8rem;
+	text-decoration: none;
+}
+
+.landing-nav a:hover {
+	color: var(--landing-accent);
+}
+
+.landing-hero {
+	overflow: hidden;
+	border-bottom: 1px solid var(--landing-line);
+	background:
+		linear-gradient(120deg, color-mix(in srgb, var(--landing-soft) 74%, transparent), transparent 68%),
+		var(--landing-surface);
+}
+
+.landing-hero__grid {
+	display: grid;
+	gap: var(--space-5);
+	padding-block: 5rem 4.5rem;
+}
+
+.landing-hero__content {
+	max-width: 48rem;
+}
+
+.eyebrow {
+	color: var(--landing-accent) !important;
+}
+
+.landing h1,
+.landing h2,
+.landing h3 {
+	font-family: Georgia, "Times New Roman", serif;
+	font-weight: 500;
+	letter-spacing: -0.035em;
+}
+
+.landing h1 {
+	max-width: 13ch;
+	margin: 0 0 var(--space-3);
+	font-size: clamp(3rem, 11vw, 6.7rem);
+	line-height: 0.98;
+}
+
+.landing h2 {
+	max-width: 24ch;
+	margin: 0;
+	font-size: clamp(2rem, 5vw, 3.8rem);
+	line-height: 1.04;
+}
+
+.landing h3 {
+	margin: 0 0 var(--space-2);
+	font-size: 1.5rem;
+	line-height: 1.1;
+}
+
+.hero-lead {
+	max-width: 38rem;
+	margin: 0 0 var(--space-3);
+	color: var(--landing-muted);
+	font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	min-height: 3rem;
+	padding: 0.75rem 1rem;
+	border: 1px solid var(--landing-accent);
+	background: var(--landing-accent);
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.button-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.button--secondary {
+	background: transparent;
+	color: var(--landing-accent);
+}
+
+.button:hover,
+.button:focus-visible {
+	background: var(--landing-ink);
+	border-color: var(--landing-ink);
+}
+
+.button--secondary:hover,
+.button--secondary:focus-visible {
+	color: #fff;
+}
+
+.profile-portrait {
+	max-width: 20rem;
+	margin: var(--space-4) 0 0;
+	border: 1px solid var(--landing-line);
+	background: var(--landing-surface);
+}
+
+.profile-portrait img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	object-position: center 30%;
+}
+
+.profile-portrait figcaption {
+	padding: 0.65rem 0.75rem;
+	color: var(--landing-muted);
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.landing-section {
+	padding-block: 5rem;
+	border-bottom: 1px solid var(--landing-line);
+}
+
+.section-intro {
+	display: grid;
+	gap: var(--space-2);
+	margin-bottom: var(--space-4);
+}
+
+.section-intro > p:last-child,
+.profile-copy > p:last-child,
+.reach-panel > p,
+.contact-placeholder > p {
+	max-width: 37rem;
+	margin: 0;
+	color: var(--landing-muted);
+}
+
+.service-grid {
+	display: grid;
+	gap: 1px;
+	border: 1px solid var(--landing-line);
+	background: var(--landing-line);
+}
+
+.service-card {
+	position: relative;
+	min-height: 13rem;
+	padding: var(--space-3);
+	background: var(--landing-surface);
+}
+
+.service-card__index {
+	display: block;
+	margin-bottom: 3rem;
+	color: var(--landing-accent);
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+}
+
+.service-card p {
+	max-width: 30rem;
+	margin: 0;
+	color: var(--landing-muted);
+}
+
+.notarial-services {
+	display: grid;
+	gap: var(--space-3);
+	margin-top: var(--space-4);
+	padding: var(--space-3);
+	border: 1px solid var(--landing-accent);
+	background: var(--landing-soft);
+}
+
+.notarial-services__intro h3 {
+	max-width: 24rem;
+	margin: 0;
+}
+
+.notarial-services__note {
+	max-width: 30rem;
+	margin: var(--space-2) 0 0;
+	color: var(--landing-muted);
+	font-size: 0.875rem;
+}
+
+.notarial-services__list {
+	display: grid;
+	gap: 0.75rem 1.5rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.notarial-services__list li {
+	display: grid;
+	gap: 0.35rem;
+	padding-top: 0.75rem;
+	border-top: 1px solid var(--landing-line);
+	color: var(--landing-ink);
+}
+
+.notarial-services__list strong {
+	font-weight: 700;
+}
+
+.notarial-services__list span {
+	color: var(--landing-muted);
+	font-size: 0.9rem;
+}
+
+.profile-section {
+	background: var(--landing-soft);
+}
+
+.profile-grid,
+.experience-panel,
+.reach-panel,
+.contact-panel {
+	display: grid;
+	gap: var(--space-4);
+}
+
+.experience-section {
+	background: var(--landing-surface);
+}
+
+.experience-panel {
+	padding: var(--space-3);
+	border-left: 2px solid var(--landing-accent);
+}
+
+.profile-credentials {
+	margin: 0 0 var(--space-2);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.6rem;
+	line-height: 1.2;
+}
+
+.reach-panel {
+	padding: var(--space-3);
+	border: 1px solid var(--landing-line);
+	background: var(--landing-surface);
+}
+
+.contact-section {
+	background: var(--landing-ink);
+	color: #fff;
+}
+
+.contact-section .eyebrow {
+	color: #d8b56a !important;
+}
+
+.contact-section .contact-placeholder__label {
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.contact-section .contact-placeholder > p:last-child {
+	color: rgb(255 255 255 / 72%);
+}
+
+.button-group--contact {
+	margin-top: var(--space-3);
+}
+
+.contact-section .button--secondary {
+	color: #fff;
+	border-color: rgb(255 255 255 / 70%);
+}
+
+.contact-section .button--secondary:hover,
+.contact-section .button--secondary:focus-visible {
+	color: var(--landing-ink);
+	background: #fff;
+	border-color: #fff;
+}
+
+.landing-footer {
+	background: var(--landing-surface);
+}
+
+.landing-footer__inner {
+	display: flex;
+	justify-content: space-between;
+	gap: var(--space-2);
+	padding-block: var(--space-3);
+	color: var(--landing-muted);
+	font-size: 0.8rem;
+}
+
+.landing-footer p {
+	margin: 0;
+}
+
+.whatsapp-float {
+	position: fixed;
+	right: 1rem;
+	bottom: max(1rem, env(safe-area-inset-bottom));
+	z-index: 5;
+	display: grid;
+	width: 3.5rem;
+	height: 3.5rem;
+	place-items: center;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background: #168c4a;
+	color: #fff;
+	box-shadow: 0 0.75rem 1.5rem rgb(19 37 59 / 22%);
+	transition:
+		background-color 160ms ease,
+		transform 160ms ease;
+}
+
+.whatsapp-float svg {
+	width: 1.75rem;
+	height: 1.75rem;
+	fill: currentColor;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+	background: #0f6d39;
+}
+
+.whatsapp-float:focus-visible {
+	outline-color: #168c4a;
+}
+
+.whatsapp-float:hover {
+	transform: translateY(-2px);
+}
+
+.landing--moderna .landing-hero {
+	background:
+		linear-gradient(90deg, rgb(19 37 59 / 3%), transparent 45%),
+		var(--landing-surface);
+}
+
+.landing--moderna .landing-hero__content {
+	padding-left: 1.25rem;
+	border-left: 2px solid var(--landing-accent);
+}
+
+.landing--moderna .button {
+	border-radius: 0.15rem;
+}
+
+.landing--moderna .service-card:hover {
+	background: var(--landing-soft);
+}
+
+@media (min-width: 48rem) {
+	.landing-hero__grid {
+		grid-template-columns: minmax(0, 1fr) 16rem;
+		align-items: end;
+		min-height: 42rem;
+		padding-block: 7rem;
+	}
+
+	.landing-section {
+		padding-block: 7rem;
+	}
+
+	.service-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.notarial-services {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+		align-items: end;
+		padding: var(--space-4);
+	}
+
+	.notarial-services__list {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.profile-grid,
+	.experience-panel,
+	.reach-panel,
+	.contact-panel {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: end;
+	}
+
+	.experience-panel {
+		padding: var(--space-4);
+	}
+
+	.reach-panel,
+	.contact-panel {
+		padding: var(--space-4);
+	}
+}
+
+@media (max-width: 38rem) {
+	.landing-header__inner,
+	.landing-footer__inner {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.landing-header__inner {
+		padding-block: 1rem;
+	}
+
+	.landing-nav {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.whatsapp-float {
+		right: 0.875rem;
+		width: 3.25rem;
+		height: 3.25rem;
+	}
+
+}
+
+@media (min-width: 48rem) {
+	.container {
+		width: min(100% - 4rem, var(--content-width));
+	}
+
+	.hero,
+	.placeholder-section {
+		padding-block: 7rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.whatsapp-float {
+		transition: none;
+	}
+}
