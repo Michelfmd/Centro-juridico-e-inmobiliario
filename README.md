@@ -1,43 +1,53 @@
-# Astro Starter Kit: Minimal
+# Landing page de servicios legales
 
-```sh
-npm create astro@latest -- --template minimal
+Estructura inicial de una landing page con Astro para un abogado en México. El contenido actual es provisional y no contiene datos reales del cliente.
+
+## Requisitos
+
+- Node.js `>=22.23.4`
+- npm
+
+## Instalación
+
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Desarrollo local
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+El sitio estará disponible normalmente en `http://localhost:4321`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Compilación
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm run build
+```
 
-## 🧞 Commands
+## Vista previa de producción
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run preview
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Estructura principal
 
-## 👀 Want to learn more?
+- `src/layouts/`: layouts compartidos.
+- `src/pages/`: páginas y rutas de Astro.
+- `src/components/`: componentes reutilizables.
+- `src/styles/`: estilos globales.
+- `public/images/`: imágenes públicas del proyecto.
+- `docs/pendientes-cliente.md`: información que falta confirmar antes de publicar.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Sitio actual
+
+`npm run dev` muestra directamente la propuesta moderna en azul marino, blanco y dorado discreto.
+
+- Ruta principal: `/`
+- Ruta equivalente: `/demo/moderna/`
+
+La propuesta café fue descartada y ya no tiene una ruta activa.
+# nn
