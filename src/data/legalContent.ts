@@ -1,43 +1,60 @@
 export const legalContent = {
-	name: "Francisco Javier Sánchez Chavira",
-	credentials: "Licenciado en Derecho y Maestro en Derecho Corporativo",
+	name: "Jurídico e Inmobiliario",
+	credentials: "Maestría en Derecho Corporativo",
+	experience: "Abogado con 15 años de experiencia",
 	areas: [
 		{
-			title: "Juicios sucesorios testamentarios",
+			title: "Juicios sucesorios",
 			description:
-				"Acompañamiento estratégico para ordenar la transmisión de bienes y derechos conforme a la voluntad expresada en el testamento.",
+				"Acompañamos a las familias en sucesiones testamentarias e intestamentarias, desde la apertura del juicio hasta la sentencia de los bienes heredados.",
+			stages: [
+				"Presentación del escrito inicial, seguimiento procesal y asignación del juzgado correspondiente.",
+				"Determinación de herederos y albacea. En esta etapa puede evaluarse el arrendamiento del inmueble.",
+				"Elaboración del inventario de bienes y su avalúo. En esta etapa puede evaluarse la venta del inmueble para evitar el pago de doble escrituración.",
+				"Partición y adjudicación de los bienes conforme al testamento o a lo que disponga la ley.",
+				"Sentencia que concluye el juicio.",
+				"Protocolización de los bienes heredados ante el notario de su elección.",
+			],
 		},
 		{
-			title: "Juicios sucesorios intestamentarios",
+			title: "Servicios notariales",
 			description:
-				"Le ayudamos a entender sus derechos, reunir la documentación y avanzar con claridad cuando no existe testamento.",
+				"Protocolización e inscripción de actos y documentos ante notario y el Registro Público de la Propiedad y del Comercio.",
+			items: [
+				"Protocolización de juicios sucesorios",
+				"Protocolización de actas constitutivas",
+				"Protocolización de actas de asamblea",
+				"Inscripción de actas constitutivas, actas de asamblea, poderes notariales y escrituras en el Registro Público de la Propiedad y del Comercio",
+				"Búsqueda de folios mercantiles",
+			],
 		},
 		{
-			title: "Asuntos inmobiliarios",
+			title: "Registro civil",
 			description:
-				"Análisis jurídico de compraventas, donaciones y conflictos relacionados con bienes inmuebles para reducir riesgos antes de decidir.",
-		},
-	],
-	notarialServices: [
-		{
-			title: "Escrituras de compraventa",
-			description: "Formalización de operaciones de compraventa de bienes inmuebles.",
-		},
-		{
-			title: "Donaciones",
-			description: "Orientación para documentar la transmisión de bienes por donación.",
+				"Obtención, corrección y apostilla de documentos del Registro Civil.",
+			items: [
+				"Obtención de actas de nacimiento, matrimonio, divorcio y defunción",
+				"Corrección de actas por errores ortográficos, abreviaturas u otros errores",
+				"Constancias de existencia o inexistencia de matrimonio o de hijos",
+				"Apostilla de documentos",
+			],
 		},
 		{
-			title: "Actas constitutivas",
-			description: "Preparación de documentos para la constitución de sociedades.",
+			title: "Servicios inmobiliarios",
+			description:
+				"Búsqueda de escrituras y antecedentes registrales. Avalúos y opiniones de valor para la venta de inmuebles. Revisión del estado jurídico de la propiedad. Elaboración de contratos de compraventa y arrendamiento, formalizados ante notario público o mediante convenio en un Centro de Justicia Alternativa. Trámite de certificado de libertad o gravamen.",
 		},
 		{
-			title: "Actas de asamblea",
-			description: "Documentación de acuerdos adoptados por asambleas de sociedades.",
-		},
-		{
-			title: "Protocolización de sentencias",
-			description: "Integración de sentencias a un instrumento conforme al caso correspondiente.",
+			title: "Servicios para empresas",
+			description:
+				"Trámites ante dependencias estatales y municipales en la Zona Metropolitana de Guadalajara (ZMG).",
+			items: [
+				"Baja y canje de placas",
+				"Validación de facturas",
+				"Licencias y permisos municipales",
+				"Notificaciones, entrega y recolección de documentación sensible",
+				"Trámites ante dependencias estatales y municipales en la Zona Metropolitana de Guadalajara (ZMG)",
+			],
 		},
 	],
 };

@@ -1,6 +1,6 @@
-# Landing page de servicios legales
+# Sitio oficial de Jurídico e Inmobiliario
 
-Estructura inicial de una landing page con Astro para un abogado en México. El contenido actual es provisional y no contiene datos reales del cliente.
+Sitio oficial de servicios jurídicos e inmobiliarios en Guadalajara, desarrollado con Astro.
 
 ## Requisitos
 
@@ -42,13 +42,8 @@ npm run preview
 - `public/images/`: imágenes públicas del proyecto.
 - `docs/pendientes-cliente.md`: información que falta confirmar antes de publicar.
 
-## Sitio actual
+## Sitio
 
-`npm run dev` muestra directamente la propuesta moderna en azul marino, blanco y dorado discreto.
-
-- Ruta principal: `/`
-- Ruta equivalente: `/demo/moderna/`
-
-La propuesta café fue descartada y ya no tiene una ruta activa.
+La página oficial está disponible en la ruta raíz `/`, con una identidad visual en azul marino, blanco y dorado discreto.
 # nn
 # lic.

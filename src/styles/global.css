@@ -178,10 +178,24 @@ a:focus-visible {
 }
 
 .brand {
-	display: grid;
-	gap: 0.125rem;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
 	color: var(--landing-ink);
 	text-decoration: none;
+}
+
+.brand__logo {
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	object-fit: contain;
+	flex: 0 0 4rem;
+}
+
+.brand__text {
+	display: grid;
+	gap: 0.125rem;
 }
 
 .brand__name {
@@ -361,6 +375,8 @@ a:focus-visible {
 	min-height: 13rem;
 	padding: var(--space-3);
 	background: var(--landing-surface);
+	display: flex;
+	flex-direction: column;
 }
 
 .service-card__index {
@@ -375,6 +391,12 @@ a:focus-visible {
 .service-card p {
 	max-width: 30rem;
 	margin: 0;
+	color: var(--landing-muted);
+}
+
+.service-card__list {
+	margin: var(--space-2) 0 0;
+	padding-left: 1.25rem;
 	color: var(--landing-muted);
 }
 
@@ -450,6 +472,15 @@ a:focus-visible {
 	font-family: Georgia, "Times New Roman", serif;
 	font-size: 1.6rem;
 	line-height: 1.2;
+}
+
+.profile-copy {
+	display: grid;
+	gap: var(--space-3);
+}
+
+.profile-copy .profile-portrait {
+	margin-top: var(--space-2);
 }
 
 .reach-panel {
@@ -580,7 +611,26 @@ a:focus-visible {
 	}
 
 	.service-grid {
-		grid-template-columns: repeat(3, 1fr);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0;
+		border: none;
+		background: var(--landing-surface);
+	}
+
+	.service-card {
+		flex: 0 1 calc((100% - 2px) / 3);
+		border: 1px solid var(--landing-line);
+		margin: 0;
+	}
+
+	.service-card h3 {
+		min-height: 3.3rem;
+	}
+
+	.service-card > p {
+		min-height: 8rem;
 	}
 
 	.notarial-services {
@@ -598,7 +648,18 @@ a:focus-visible {
 	.reach-panel,
 	.contact-panel {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		align-items: end;
+		align-items: center;
+	}
+
+	.profile-copy {
+		grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.8fr);
+		align-items: center;
+	}
+
+	.profile-copy .profile-portrait {
+		grid-column: 2;
+		grid-row: 1 / span 3;
+		margin: 0;
 	}
 
 	.experience-panel {

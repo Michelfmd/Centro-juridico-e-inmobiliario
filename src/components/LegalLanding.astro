@@ -2,25 +2,30 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { legalContent } from "../data/legalContent";
 
-interface Props {
-	variant?: "moderna";
-}
-
-const variant = Astro.props.variant ?? "moderna";
 const whatsappUrl = "https://wa.me/5213325789151";
 const emailUrl = "mailto:sanchezchaviraabogado@gmail.com";
-const title = `Abogado en Guadalajara | ${legalContent.name}`;
+const title = `${legalContent.name} en Guadalajara`;
 const description =
-	`${legalContent.name}, ${legalContent.credentials}. Estrategia y acompañamiento jurídico en sucesiones, asuntos inmobiliarios y derecho corporativo.`;
+	`${legalContent.name}, ${legalContent.credentials}. Servicios jurídicos en sucesiones, servicios notariales, registro civil, asuntos inmobiliarios y empresas.`;
 ---
 
 <BaseLayout title={title} description={description}>
-	<div class={`landing landing--${variant}`}>
+	<div class="landing landing--moderna">
 		<header class="landing-header">
 			<div class="container landing-header__inner">
-				<a class="brand" href={`/demo/${variant}/`} aria-label={`Inicio | ${legalContent.name}`}>
-					<span class="brand__name">{legalContent.name}</span>
-					<span class="brand__role">Servicios legales</span>
+				<a class="brand" href="/" aria-label={`Inicio | ${legalContent.name}`}>
+					<img
+						class="brand__logo"
+						src="/images/logo.jpeg"
+						alt=""
+						width="72"
+						height="72"
+						decoding="async"
+					/>
+					<span class="brand__text">
+						<span class="brand__name">{legalContent.name}</span>
+						<span class="brand__role">Servicios legales</span>
+					</span>
 				</a>
 				<nav class="landing-nav" aria-label="Navegación principal">
 					<a href="#servicios">Servicios</a>
@@ -35,15 +40,15 @@ const description =
 			<section class="landing-hero" id="inicio" aria-labelledby="hero-title">
 				<div class="container landing-hero__grid">
 					<div class="landing-hero__content">
-						<p class="eyebrow">Estrategia legal para decisiones importantes</p>
-						<h1 id="hero-title">Certeza jurídica para decisiones importantes.</h1>
+						<p class="eyebrow">Servicios jurídicos en Guadalajara</p>
+						<h1 id="hero-title">Acompañamiento legal para resolver sus necesidades.</h1>
 						<p class="hero-lead">
-							Le ayudamos a ordenar su situación, anticipar riesgos y avanzar con una estrategia clara
-							en sucesiones, patrimonio, operaciones inmobiliarias y asuntos corporativos.
+							Contáctenos para conocer su necesidad y brindarle orientación. Solicite su cotización,
+							gratuita y sin compromiso.
 						</p>
 						<div class="button-group" aria-label="Opciones de contacto">
 							<a class="button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-								Agendar una primera conversación
+								Solicitar cotización
 							</a>
 							<a class="button button--secondary" href={emailUrl}>Enviar correo</a>
 						</div>
@@ -54,11 +59,10 @@ const description =
 			<section class="landing-section services-section" id="servicios" aria-labelledby="services-title">
 				<div class="container">
 					<div class="section-intro">
-						<p class="eyebrow">Áreas de práctica</p>
-						<h2 id="services-title">La estrategia correcta empieza por entender el problema completo.</h2>
+						<p class="eyebrow">Nuestros servicios</p>
+						<h2 id="services-title">Soluciones jurídicas para personas, familias y empresas.</h2>
 						<p>
-							Analizamos su caso, identificamos el camino más conveniente y le explicamos sus opciones
-							con franqueza, lenguaje claro y visión de largo plazo.
+							Le orientamos en cada trámite y proceso con atención directa y acompañamiento profesional.
 						</p>
 					</div>
 					<div class="service-grid">
@@ -68,29 +72,19 @@ const description =
 									<span class="service-card__index" aria-hidden="true">0{index + 1}</span>
 									<h3>{area.title}</h3>
 									<p>{area.description}</p>
+									{area.stages && (
+										<ol class="service-card__list">
+											{area.stages.map((stage) => <li>{stage}</li>)}
+										</ol>
+									)}
+									{area.items && (
+										<ul class="service-card__list">
+											{area.items.map((item) => <li>{item}</li>)}
+										</ul>
+									)}
 								</article>
 							))
 						}
-					</div>
-					<div class="notarial-services">
-						<div class="notarial-services__intro">
-							<p class="eyebrow">Formalización de operaciones</p>
-							<h3>Del acuerdo a los documentos que le dan seguridad.</h3>
-							<p class="notarial-services__note">
-								Revisamos la operación, sus antecedentes y la documentación necesaria para preparar
-								su formalización ante la instancia que corresponda.
-							</p>
-						</div>
-						<ul class="notarial-services__list">
-							{
-								legalContent.notarialServices.map((service) => (
-									<li>
-										<strong>{service.title}</strong>
-										<span>{service.description}</span>
-									</li>
-								))
-							}
-						</ul>
 					</div>
 				</div>
 			</section>
@@ -99,22 +93,21 @@ const description =
 				<div class="container profile-grid">
 					<div>
 						<p class="eyebrow">Perfil profesional</p>
-						<h2 id="profile-title">El respaldo que necesita para tomar decisiones con seguridad.</h2>
+						<h2 id="profile-title">Experiencia y atención profesional.</h2>
 					</div>
 					<div class="profile-copy">
-						<p class="profile-credentials">{legalContent.credentials}.</p>
+						<p class="profile-credentials">{legalContent.credentials}. {legalContent.experience}.</p>
 						<p>
-							Cada asunto merece una lectura cuidadosa. Revisamos los hechos, la documentación y los
-							objetivos que quiere proteger para construir una ruta jurídica ordenada y realista.
+							Atendemos las necesidades de cada cliente con orientación clara y seguimiento de sus
+							trámites.
 						</p>
 						<p>
-							La atención es directa, confidencial y enfocada en que usted entienda qué puede hacer,
-							qué riesgos existen y cuál es el siguiente paso más conveniente para su caso.
+							Contáctenos para conocer su necesidad y recibir una cotización gratuita y sin compromiso.
 						</p>
 						<figure class="profile-portrait">
 							<img
 								src="/images/francisco-javier-sanchez-chavira-perfil.jpeg"
-								alt="Francisco Javier Sánchez Chavira en un entorno profesional"
+								alt="Perfil profesional de Jurídico e Inmobiliario"
 								width="639"
 								height="846"
 								loading="lazy"
@@ -129,13 +122,12 @@ const description =
 			<section class="landing-section experience-section" id="experiencia" aria-labelledby="experience-title">
 				<div class="container experience-panel">
 					<div>
-						<p class="eyebrow">Experiencia en asuntos</p>
-						<h2 id="experience-title">Visión jurídica para proteger su patrimonio y sus decisiones.</h2>
+						<p class="eyebrow">Experiencia profesional</p>
+						<h2 id="experience-title">Acompañamiento jurídico con 15 años de experiencia.</h2>
 					</div>
 					<p>
-						Con experiencia en sucesiones, operaciones inmobiliarias y formalización de actos jurídicos,
-						abordamos cada asunto con rigor, criterio práctico y atención a los detalles que pueden hacer
-						la diferencia.
+						Maestría en Derecho Corporativo y experiencia en juicios sucesorios, servicios notariales,
+						registro civil, servicios inmobiliarios y trámites para empresas.
 					</p>
 				</div>
 			</section>
@@ -143,14 +135,13 @@ const description =
 			<section class="landing-section reach-section" aria-labelledby="reach-title">
 				<div class="container reach-panel">
 					<div>
-						<p class="eyebrow">Trámites notariales en Guadalajara</p>
-						<h2 id="reach-title">Su ubicación no debe ser un obstáculo para formalizar sus asuntos.</h2>
+						<p class="eyebrow">Atención en la ZMG</p>
+						<h2 id="reach-title">Trámites ante dependencias estatales y municipales.</h2>
 					</div>
 					<p>
-						Si se encuentra fuera de Guadalajara, podemos orientarle y acompañarle en la preparación y
-						coordinación de trámites notariales que deban realizarse en la ciudad. Revisamos su situación,
-						documentación y objetivos para ayudarle a avanzar con claridad, sin importar desde dónde nos
-						contacte.
+						Realizamos trámites ante dependencias estatales y municipales en la Zona Metropolitana de
+						Guadalajara, incluyendo licencias, permisos, notificaciones y entrega o recolección de
+						documentación sensible.
 					</p>
 				</div>
 			</section>
@@ -159,11 +150,11 @@ const description =
 				<div class="container contact-panel">
 					<div>
 						<p class="eyebrow">Contacto</p>
-						<h2 id="contact-title">El siguiente paso es hablar de su caso.</h2>
+						<h2 id="contact-title">Contáctenos para conocer su necesidad.</h2>
 					</div>
 					<div class="contact-placeholder">
-						<p class="contact-placeholder__label">Conversemos con confidencialidad</p>
-						<p>Escríbanos por WhatsApp o correo. Cuéntenos brevemente qué necesita proteger y le responderemos para coordinar una primera conversación.</p>
+						<p class="contact-placeholder__label">Solicite su cotización</p>
+						<p>Escríbanos por WhatsApp o correo para recibir orientación y una cotización gratuita y sin compromiso.</p>
 						<div class="button-group button-group--contact" aria-label="Contacto directo">
 							<a class="button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
 								WhatsApp
