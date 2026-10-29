@@ -16,7 +16,7 @@ const description =
 				<a class="brand" href="/" aria-label={`Inicio | ${legalContent.name}`}>
 					<img
 						class="brand__logo"
-						src="/images/logo.jpeg"
+						src="/images/logo1.jpeg"
 						alt=""
 						width="72"
 						height="72"
@@ -29,6 +29,7 @@ const description =
 				</a>
 				<nav class="landing-nav" aria-label="Navegación principal">
 					<a href="#servicios">Servicios</a>
+					<a href="#publico-objetivo">Público</a>
 					<a href="#perfil">Perfil</a>
 					<a href="#experiencia">Experiencia</a>
 					<a href="#contacto">Contacto</a>
@@ -97,6 +98,34 @@ const description =
 							))
 						}
 					</div>
+				</div>
+			</section>
+
+			<section class="landing-section audience-section" id="publico-objetivo" aria-labelledby="audience-title">
+				<div class="container">
+					<div class="section-intro">
+						<p class="eyebrow">Público objetivo</p>
+						<h2 id="audience-title">Atención orientada a cada necesidad jurídica.</h2>
+						<p>
+							Nuestros servicios jurídicos están dirigidos a personas, familias, empresas y mexicanos
+							que requieren apoyo para atender asuntos legales en Guadalajara y México.
+						</p>
+					</div>
+					<div class="audience-grid">
+						{
+							legalContent.targetAudience.map((audience, index) => (
+								<article class="audience-card">
+									<span class="audience-card__index" aria-hidden="true">0{index + 1}</span>
+									<h3>{audience.title}</h3>
+									<p>{audience.description}</p>
+								</article>
+							))
+						}
+					</div>
+					<p class="audience-note">
+						Ofrecemos atención orientada a las necesidades de cada cliente, con comunicación clara,
+						seguimiento de sus asuntos y apoyo en las gestiones jurídicas que requiera.
+					</p>
 				</div>
 			</section>
 

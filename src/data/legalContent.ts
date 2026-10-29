@@ -2,6 +2,28 @@ export const legalContent = {
 	name: "CENTRO JURIDICO E INMOBILIARIO",
 	credentials: "Maestría en Derecho Corporativo",
 	experience: "Abogado con 15 años de experiencia",
+	targetAudience: [
+		{
+			title: "Personas y familias",
+			description:
+				"Asesoría y representación legal para reclamar, tramitar o regularizar herencias y sucesiones.",
+		},
+		{
+			title: "Empresas de México",
+			description:
+				"Atención, representación y seguimiento de asuntos jurídicos en Guadalajara y su Zona Metropolitana.",
+		},
+		{
+			title: "Mexicanos residentes en el extranjero",
+			description:
+				"Apoyo jurídico y gestoría en Guadalajara y municipios cercanos para realizar trámites y atender asuntos legales en México.",
+		},
+		{
+			title: "Actas y documentos del Registro Civil",
+			description:
+				"Corrección, aclaración o regularización de actas de nacimiento, matrimonio, defunción y otros documentos del Registro Civil.",
+		},
+	],
 	areas: [
 		{
 			title: "Herencias y sucesiones",
