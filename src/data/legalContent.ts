@@ -77,8 +77,15 @@ export const legalContent = {
 		{
 			title: "Servicios inmobiliarios",
 			description:
-				"Búsqueda de escrituras y antecedentes registrales. Avalúos y opiniones de valor para la venta de inmuebles. Revisión del estado jurídico de la propiedad. Elaboración de contratos de compraventa y arrendamiento, formalizados ante notario público o mediante convenio en un Centro de Justicia Alternativa. Trámite de certificado de libertad o gravamen.",
+				"Apoyo en la revisión, formalización y gestión de asuntos relacionados con inmuebles.",
 			cta: "Consultar un asunto inmobiliario",
+			items: [
+				"Búsqueda de escrituras y antecedentes registrales",
+				"Avalúos y opiniones de valor para la venta de inmuebles",
+				"Revisión del estado jurídico de la propiedad",
+				"Elaboración de contratos de compraventa y arrendamiento, formalizados ante notario público o mediante convenio en un Centro de Justicia Alternativa",
+				"Trámite de certificado de libertad o gravamen",
+			],
 		},
 		{
 			title: "Asuntos corporativos en Guadalajara",
