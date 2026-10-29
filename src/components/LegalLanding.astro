@@ -72,6 +72,9 @@ const description =
 									<span class="service-card__index" aria-hidden="true">0{index + 1}</span>
 									<h3>{area.title}</h3>
 									<p>{area.description}</p>
+									{area.pendingConfirmation && (
+										<p class="service-card__note">{area.pendingConfirmation}</p>
+									)}
 									{area.stages && (
 										<ol class="service-card__list">
 											{area.stages.map((stage) => <li>{stage}</li>)}
@@ -82,6 +85,14 @@ const description =
 											{area.items.map((item) => <li>{item}</li>)}
 										</ul>
 									)}
+									<a
+										class="service-card__cta"
+										href={`${whatsappUrl}?text=${encodeURIComponent(`Hola, quisiera orientación sobre ${area.title.toLowerCase()}.`)}`}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{area.cta ?? "Consultar este servicio"} <span aria-hidden="true">→</span>
+									</a>
 								</article>
 							))
 						}
@@ -107,7 +118,7 @@ const description =
 						<figure class="profile-portrait">
 							<img
 								src="/images/francisco-javier-sanchez-chavira-perfil.jpeg"
-								alt="Perfil profesional de Jurídico e Inmobiliario"
+								alt="Perfil profesional de CENTRO JURIDICO E INMOBILIARIO"
 								width="639"
 								height="846"
 								loading="lazy"

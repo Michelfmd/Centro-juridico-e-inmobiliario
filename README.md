@@ -1,4 +1,4 @@
-# Sitio oficial de Jurídico e Inmobiliario
+# Sitio oficial de CENTRO JURIDICO E INMOBILIARIO
 
 Sitio oficial de servicios jurídicos e inmobiliarios en Guadalajara, desarrollado con Astro.
 

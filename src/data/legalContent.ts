@@ -1,25 +1,25 @@
 export const legalContent = {
-	name: "Jurídico e Inmobiliario",
+	name: "CENTRO JURIDICO E INMOBILIARIO",
 	credentials: "Maestría en Derecho Corporativo",
 	experience: "Abogado con 15 años de experiencia",
 	areas: [
 		{
-			title: "Juicios sucesorios",
+			title: "Herencias y sucesiones",
 			description:
-				"Acompañamos a las familias en sucesiones testamentarias e intestamentarias, desde la apertura del juicio hasta la sentencia de los bienes heredados.",
+				"Orientación para conocer sus opciones legales al reclamar una herencia, ya sea mediante sucesión testamentaria o intestamentaria.",
+			cta: "Consultar sobre una herencia",
 			stages: [
-				"Presentación del escrito inicial, seguimiento procesal y asignación del juzgado correspondiente.",
-				"Determinación de herederos y albacea. En esta etapa puede evaluarse el arrendamiento del inmueble.",
-				"Elaboración del inventario de bienes y su avalúo. En esta etapa puede evaluarse la venta del inmueble para evitar el pago de doble escrituración.",
-				"Partición y adjudicación de los bienes conforme al testamento o a lo que disponga la ley.",
-				"Sentencia que concluye el juicio.",
-				"Protocolización de los bienes heredados ante el notario de su elección.",
+				"Revisión inicial de la situación y de la documentación disponible.",
+				"Determinación de herederos y albacea.",
+				"Inventario, avalúo, partición y adjudicación de bienes.",
+				"Seguimiento del juicio hasta su conclusión y protocolización correspondiente.",
 			],
 		},
 		{
 			title: "Servicios notariales",
 			description:
 				"Protocolización e inscripción de actos y documentos ante notario y el Registro Público de la Propiedad y del Comercio.",
+			cta: "Consultar un servicio notarial",
 			items: [
 				"Protocolización de juicios sucesorios",
 				"Protocolización de actas constitutivas",
@@ -29,13 +29,26 @@ export const legalContent = {
 			],
 		},
 		{
-			title: "Registro civil",
+			title: "Mexicanos que viven en el extranjero",
 			description:
-				"Obtención, corrección y apostilla de documentos del Registro Civil.",
+				"Orientación para mexicanos que viven fuera del país y necesitan explorar apoyo jurídico o gestoría relacionada con Guadalajara.",
+			cta: "Consultar desde el extranjero",
+			pendingConfirmation:
+				"El alcance específico de esta atención requiere confirmación antes de publicar información más detallada.",
 			items: [
 				"Obtención de actas de nacimiento, matrimonio, divorcio y defunción",
-				"Corrección de actas por errores ortográficos, abreviaturas u otros errores",
-				"Constancias de existencia o inexistencia de matrimonio o de hijos",
+				"Apostilla de documentos",
+				"Notificaciones, entrega y recolección de documentación sensible",
+			],
+		},
+		{
+			title: "Corrección de actas del Registro Civil",
+			description:
+				"Orientación sobre las opciones legales para corregir actas del Registro Civil con errores en nombres, apellidos o fechas.",
+			cta: "Consultar una corrección de acta",
+			items: [
+				"Revisión de errores ortográficos, abreviaturas u otros datos del acta",
+				"Obtención de actas de nacimiento, matrimonio, divorcio y defunción",
 				"Apostilla de documentos",
 			],
 		},
@@ -43,17 +56,18 @@ export const legalContent = {
 			title: "Servicios inmobiliarios",
 			description:
 				"Búsqueda de escrituras y antecedentes registrales. Avalúos y opiniones de valor para la venta de inmuebles. Revisión del estado jurídico de la propiedad. Elaboración de contratos de compraventa y arrendamiento, formalizados ante notario público o mediante convenio en un Centro de Justicia Alternativa. Trámite de certificado de libertad o gravamen.",
+			cta: "Consultar un asunto inmobiliario",
 		},
 		{
-			title: "Servicios para empresas",
+			title: "Asuntos corporativos en Guadalajara",
 			description:
-				"Trámites ante dependencias estatales y municipales en la Zona Metropolitana de Guadalajara (ZMG).",
+				"Apoyo para empresas de México que necesitan atender trámites o asuntos jurídicos ante autoridades estatales y municipales en Guadalajara.",
+			cta: "Consultar un asunto corporativo",
 			items: [
 				"Baja y canje de placas",
 				"Validación de facturas",
 				"Licencias y permisos municipales",
 				"Notificaciones, entrega y recolección de documentación sensible",
-				"Trámites ante dependencias estatales y municipales en la Zona Metropolitana de Guadalajara (ZMG)",
 			],
 		},
 	],

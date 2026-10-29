@@ -196,6 +196,7 @@ a:focus-visible {
 .brand__text {
 	display: grid;
 	gap: 0.125rem;
+	min-width: 0;
 }
 
 .brand__name {
@@ -203,6 +204,7 @@ a:focus-visible {
 	font-size: 1.05rem;
 	font-weight: 700;
 	letter-spacing: -0.02em;
+	overflow-wrap: anywhere;
 }
 
 .brand__role {
@@ -394,10 +396,36 @@ a:focus-visible {
 	color: var(--landing-muted);
 }
 
+.service-card__note {
+	margin-top: var(--space-2) !important;
+	padding-top: var(--space-2);
+	border-top: 1px solid var(--landing-line);
+	font-size: 0.875rem;
+}
+
 .service-card__list {
 	margin: var(--space-2) 0 0;
 	padding-left: 1.25rem;
 	color: var(--landing-muted);
+}
+
+.service-card__cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	margin-top: auto;
+	padding-top: var(--space-3);
+	color: var(--landing-accent);
+	font-size: 0.875rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.service-card__cta:hover,
+.service-card__cta:focus-visible {
+	color: var(--landing-ink);
+	text-decoration: underline;
+	text-underline-offset: 0.2em;
 }
 
 .notarial-services {
@@ -673,6 +701,16 @@ a:focus-visible {
 }
 
 @media (max-width: 38rem) {
+	.landing h1 {
+		max-width: none;
+		font-size: clamp(2.35rem, 11vw, 3.5rem);
+		line-height: 1.04;
+	}
+
+	.landing h2 {
+		max-width: none;
+	}
+
 	.landing-header__inner,
 	.landing-footer__inner {
 		align-items: flex-start;
@@ -694,6 +732,9 @@ a:focus-visible {
 		height: 3.25rem;
 	}
 
+	.landing-footer__inner {
+		padding-bottom: 5rem;
+	}
 }
 
 @media (min-width: 48rem) {
