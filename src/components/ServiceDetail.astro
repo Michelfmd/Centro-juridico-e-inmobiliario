@@ -1,0 +1,98 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { legalContent } from "../data/legalContent";
+
+interface Props {
+	service: {
+		title: string;
+		intro: string;
+		description: string;
+		sections: readonly {
+			title: string;
+			items: readonly string[];
+		}[];
+	};
+}
+
+const { service } = Astro.props;
+const whatsappUrl = "https://wa.me/5213325789151";
+const whatsappMessage = `Hola, quisiera orientación sobre ${service.title.toLowerCase()}.`;
+const title = `${service.title} | ${legalContent.name}`;
+const description = `${service.description} ${legalContent.name} ofrece atención en Guadalajara y su Zona Metropolitana.`;
+---
+
+<BaseLayout title={title} description={description}>
+	<div class="landing landing--moderna">
+		<header class="landing-header">
+			<div class="container landing-header__inner">
+				<a class="brand" href="/" aria-label={`Inicio | ${legalContent.name}`}>
+					<img class="brand__logo" src="/images/logo1.jpeg" alt="" width="72" height="72" decoding="async" />
+					<span class="brand__text">
+						<span class="brand__name">{legalContent.name}</span>
+						<span class="brand__role">Servicios legales</span>
+					</span>
+				</a>
+				<nav class="landing-nav" aria-label="Navegación principal">
+					<a href="/#servicios">Servicios</a>
+					<a href="/#perfil">Perfil</a>
+					<a href="/#experiencia">Experiencia</a>
+					<a href="/#contacto">Contacto</a>
+				</nav>
+			</div>
+		</header>
+
+		<main id="contenido">
+			<section class="detail-hero" aria-labelledby="detail-title">
+				<div class="container detail-hero__inner">
+					<a class="detail-back" href="/#servicios" aria-label="Regresar al catálogo de servicios">
+						<span aria-hidden="true">←</span> Catálogo de servicios
+					</a>
+					<p class="eyebrow">Centro Jurídico E Inmobiliario</p>
+					<h1 id="detail-title">{service.title}</h1>
+					<p class="detail-intro">{service.intro}</p>
+					<div class="button-group">
+						<a class="button" href={`${whatsappUrl}?text=${encodeURIComponent(whatsappMessage)}`} target="_blank" rel="noopener noreferrer">
+							Consultar por WhatsApp
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="detail-services" aria-label="Desglose de servicios">
+				<div class="container">
+					{service.sections.map((section) => (
+						<section class="detail-section">
+							<h2>{section.title}</h2>
+							<ul class="detail-list">
+								{section.items.map((item) => <li>{item}</li>)}
+							</ul>
+						</section>
+					))}
+
+					<div class="detail-contact">
+						<div>
+							<p class="eyebrow">Atención personalizada</p>
+							<h2>Consulte su necesidad</h2>
+						</div>
+						<a class="button" href={`${whatsappUrl}?text=${encodeURIComponent(whatsappMessage)}`} target="_blank" rel="noopener noreferrer">
+							Escribir por WhatsApp
+						</a>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="landing-footer">
+			<div class="container landing-footer__inner">
+				<p>{legalContent.name}</p>
+				<p>La información de este sitio es general y no sustituye una consulta jurídica personalizada.</p>
+			</div>
+		</footer>
+
+		<a class="whatsapp-float" href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+			<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+				<path d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.56 0 .25 5.3.25 11.82c0 2.08.54 4.1 1.57 5.88L.18 23.98l6.42-1.68a11.8 11.8 0 0 0 5.47 1.35h.01c6.52 0 11.82-5.3 11.82-11.82 0-3.16-1.22-6.13-3.4-8.33Zm-8.42 18.1h-.01a9.78 9.78 0 0 1-4.98-1.36l-.36-.21-3.81 1 1.02-3.72-.23-.38a9.8 9.8 0 0 1-1.5-5.11C2.21 6.4 6.64 1.98 12.08 1.98a9.75 9.75 0 0 1 6.95 2.88 9.75 9.75 0 0 1 2.87 6.96c0 5.44-4.43 9.78-9.82 9.78Zm5.37-7.33c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.44-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z" />
+			</svg>
+		</a>
+	</div>
+</BaseLayout>

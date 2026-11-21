@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { legalContent } from "../data/legalContent";
+import { legalContent, serviceCatalog } from "../data/legalContent";
 
 const whatsappUrl = "https://wa.me/5213325789151";
 const emailUrl = "mailto:sanchezchaviraabogado@gmail.com";
@@ -41,17 +41,19 @@ const description =
 			<section class="landing-hero" id="inicio" aria-labelledby="hero-title">
 				<div class="container landing-hero__grid">
 					<div class="landing-hero__content">
-						<p class="eyebrow">Servicios jurídicos en Guadalajara</p>
-						<h1 id="hero-title">Acompañamiento legal para resolver sus necesidades.</h1>
+						<p class="eyebrow">Servicios jurídicos e inmobiliarios en Guadalajara</p>
+						<h1 id="hero-title">CENTRO JURÍDICO E INMOBILIARIO</h1>
 						<p class="hero-lead">
-							Contáctenos para conocer su necesidad y brindarle orientación. Solicite su cotización,
-							gratuita y sin compromiso.
+							Gestiones a realizar en la Zona Metropolitana de Guadalajara para personas y empresas radicadas en otros estados y connacionales.
 						</p>
-						<div class="button-group" aria-label="Opciones de contacto">
-							<a class="button" href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-								Solicitar cotización
-							</a>
-							<a class="button button--secondary" href={emailUrl}>Enviar correo</a>
+						<div class="hero-zones" aria-label="Zonas de atención">
+							<span>Zonas de atención</span>
+							<ul>
+								<li>Zapopan</li>
+								<li>Guadalajara</li>
+								<li>Tlaquepaque</li>
+								<li>Tonalá</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -60,41 +62,38 @@ const description =
 			<section class="landing-section services-section" id="servicios" aria-labelledby="services-title">
 				<div class="container">
 					<div class="section-intro">
-						<p class="eyebrow">Nuestros servicios</p>
-						<h2 id="services-title">Soluciones jurídicas para personas, familias y empresas.</h2>
-						<p>
-							Le orientamos en cada trámite y proceso con atención directa y acompañamiento profesional.
-						</p>
+						<p class="eyebrow">Catálogo de servicios</p>
+						<h2 id="services-title">Seleccione la categoría que necesita consultar.</h2>
+						<p>Conozca los servicios incluidos en cada categoría y consulte por WhatsApp para orientación personalizada.</p>
 					</div>
 					<div class="service-grid">
 						{
-							legalContent.areas.map((area, index) => (
-								<article class="service-card">
-									<span class="service-card__index" aria-hidden="true">0{index + 1}</span>
-									<h3>{area.title}</h3>
-									<p>{area.description}</p>
-									{area.pendingConfirmation && (
-										<p class="service-card__note">{area.pendingConfirmation}</p>
-									)}
-									{area.stages && (
-										<ol class="service-card__list">
-											{area.stages.map((stage) => <li>{stage}</li>)}
-										</ol>
-									)}
-									{area.items && (
-										<ul class="service-card__list">
-											{area.items.map((item) => <li>{item}</li>)}
-										</ul>
-									)}
-									<a
-										class="service-card__cta"
-										href={`${whatsappUrl}?text=${encodeURIComponent(`Hola, quisiera orientación sobre ${area.title.toLowerCase()}.`)}`}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{area.cta ?? "Consultar este servicio"} <span aria-hidden="true">→</span>
-									</a>
-								</article>
+							serviceCatalog.map((service, index) => (
+								<a class="service-card" href={`/${service.slug}/`} aria-label={`Consultar ${service.title}`}>
+									<span class="service-card__top">
+										<span class="service-card__icon" aria-hidden="true">
+											{service.icon === "inheritance" && (
+												<svg viewBox="0 0 24 24"><path d="M7 3h10v4H7zM9 7v10m6-10v10M5 20h14M4 17h16M7 12h10" /></svg>
+											)}
+											{service.icon === "registry" && (
+												<svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4M3 7v10" /></svg>
+											)}
+											{service.icon === "notary" && (
+												<svg viewBox="0 0 24 24"><path d="M12 3l7 4H5l7-4zM5 8h14M7 8v8m5-8v8m5-8v8M4 19h16M6 16h12" /></svg>
+											)}
+											{service.icon === "property" && (
+												<svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-5 7 5v11M9 20v-6h6v6M8 11h1m6 0h1" /></svg>
+											)}
+											{service.icon === "government" && (
+												<svg viewBox="0 0 24 24"><path d="M4 21h16M6 18h12M7 9v9m5-9v9m5-9v9M3 9h18L12 3 3 9z" /></svg>
+											)}
+										</span>
+										<span class="service-card__index" aria-hidden="true">0{index + 1}</span>
+									</span>
+									<h3>{service.title}</h3>
+									<p>{service.description}</p>
+									<span class="service-card__cta">Ver servicios <span aria-hidden="true">→</span></span>
+								</a>
 							))
 						}
 					</div>
